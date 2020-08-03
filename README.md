@@ -1,4 +1,4 @@
-# GraphQL for frontends
+# GraphQL for frontends, curso dictado por Nicolas M. Pardo / DeBakatas
 
 ## ¿Como usar?
 
