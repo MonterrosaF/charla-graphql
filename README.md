@@ -11,4 +11,6 @@
     ```sh
     npm start
     ```
+1. Modifica el archivo .env con el token de tu api de GitHub
+
 1. Mira el proyecto en [http://localhost:3000](http://localhost:3000)
