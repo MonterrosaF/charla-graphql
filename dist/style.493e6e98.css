@@ -1,0 +1,274 @@
+/*
+    deBakatas variables
+*/
+:root {
+    --black: #151515;
+    --blue: #2269ff;
+    --distance: 50vw;
+    --duration: 2s;
+    --effect: skew(-15deg);
+    --font-serif: Georgia, 'Times New Roman', Times, serif;
+    --gradient: var(--purple), 50%, var(--blue);
+    --green: #34c4fc;
+    --left: 40vw;
+    --purple: #bf26ff;
+    --top: -10vh;
+    --white: #ccc;
+}
+
+/* Animations */
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    background: var(--black);
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+    padding-inline: 4rem;
+    width: 100vw;
+}
+
+body > header {
+    border-bottom: 1px solid var(--white);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 2rem;
+    padding: 3rem;
+    width: 100%;
+}
+
+body > header figure {
+        display: flex;
+        align-items: center;
+    }
+
+body > header figure img {
+            height: 5rem;
+        }
+
+body > header figure.logo figcaption {
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+                background-image: linear-gradient(to top, var(--gradient));
+                color: var(--purple);
+                font-size: 1.4rem;
+                margin-left: 0.2rem;
+            }
+
+body > header figure.user img {
+                border-radius: 0.5rem;
+                overflow: hidden;
+            }
+
+body > header figure.user figcaption {
+                color: var(--white);
+                margin-right: 1rem;
+                text-align: right;
+            }
+
+body > header figure.user figcaption h2 {
+                    font-weight: normal;
+                    transform: var(--effect);
+                }
+
+body > header figure.user figcaption .user-desc {
+                    text-align: left;
+                    display: block;
+                }
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+form button {
+        background-image: linear-gradient(
+            to top left,
+            var(--gradient)
+        ) !important;
+        border-radius: 2rem;
+        border: 1px solid var(--black);
+        color: var(--white);
+        font-size: 1rem;
+        height: 100%;
+        padding: 1rem 2rem;
+    }
+
+form button:hover,
+        form button:focus {
+            background-image: linear-gradient(
+                315deg,
+                var(--gradient)
+            ) !important;
+            border-color: var(--purple);
+        }
+
+form input {
+        border-bottom: 1px solid var(--white);
+        font-size: 1rem;
+        padding: 1rem 2rem;
+    }
+
+form input:focus {
+            border-bottom-color: var(--purple);
+        }
+
+.searched-user {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: 0;
+}
+
+.searched-user img {
+        height: 4rem;
+    }
+
+.searched-user figcaption {
+        text-align: right;
+    }
+
+.searched-user div {
+        margin-left: 1rem;
+        overflow: hidden;
+        position: relative;
+    }
+
+.searched-user div button {
+            background-color: #15151588;
+            font-size: 1rem;
+            height: 100%;
+            left: 0;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            transform: rotate(0deg) scale(1);
+            width: 100%;
+        }
+
+.searched-user div button:hover {
+                opacity: 1;
+                transform: rotate(90deg);
+            }
+
+.mojo {
+    animation: rotate var(--duration) infinite;
+    background: var(--green);
+    display: block;
+    height: 1rem;
+    left: var(--left);
+    position: absolute;
+    top: var(--top);
+    transition: all var(--duration) ease-in-out;
+    width: 1rem;
+    will-change: top, left;
+    z-index: 100;
+}
+
+.mojo:nth-of-type(3n - 1) {
+        background: var(--purple);
+    }
+
+main > ul {
+        display: grid;
+        grid-column-gap: 2rem;
+        grid-row-gap: 3rem;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: 3rem;
+    }
+
+article {
+    background-image: linear-gradient(to top left, var(--gradient));
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    padding-top: 0;
+    position: relative;
+}
+
+article i {
+        position: absolute;
+        right: 1rem;
+        top: -0.5rem;
+        transform: translateY(-100%);
+    }
+
+article h3 {
+        background: var(--black);
+        display: flex;
+        display: inline-block;
+        justify-content: space-between;
+        padding: 0.5rem;
+        transform: translateY(-50%);
+    }
+
+article h3:hover {
+            transform: translateY(-50%) var(--effect);
+        }
+
+article h3 a {
+            text-decoration: underline;
+        }
+
+article p {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+article ul {
+        display: flex;
+    }
+
+article ul li {
+            background: var(--black);
+            border-radius: 1rem;
+            color: white;
+            font-size: 0.8rem;
+            margin-right: 0.25rem;
+            padding: 0.5rem 1rem;
+        }
+
+article ul li:last-of-type {
+                margin-right: 0;
+            }
+
+article ul li.css {
+                background-color: #1c85e1;
+            }
+
+article ul li.html {
+                background-color: #d95c2c;
+            }
+
+article ul li.javascript {
+                background-color: #d7aa22;
+            }
+
+article ul li.java {
+                display: none;
+            }
+
+article i {
+        font-style: normal;
+    }
+
+article i span {
+            display: inline-block;
+            animation: rotate var(--duration) infinite;
+        }
+
+
+/*# sourceMappingURL=/style.493e6e98.css.map */
